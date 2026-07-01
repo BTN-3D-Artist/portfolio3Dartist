@@ -26,7 +26,8 @@
 </head>
 
 <body>
-    <header> <!-- Thẻ header được dùng để nhóm các nội dung đầu trang, thường chứa logo, tiêu đề và điều hướng -->
+    <!-- Thẻ header được dùng để nhóm các nội dung đầu trang, thường chứa logo, tiêu đề và điều hướng -->
+    <header>
         <a href="#" class="logo">
             <img src="./img/Symbol Logo.png" alt="Logo" width="50" height="50">
         </a>
@@ -34,11 +35,11 @@
             <ul class="nav-list">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
+
         <a href="./PDF/NguyenBaTuong_CV.pdf" class="btn-download">
             Download CV
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -47,220 +48,209 @@
             </svg>
         </a>
     </header>
-
     <!-- Thẻ main được dùng để nhóm các nội dung chính của trang web, thường chứa các bài viết hoặc thông tin quan trọng -->
     <main>
-        <section class="hero-section">
-            <div class="hero-container">
-                <p class="hero-badge">3D Artist & Visual Storyteller</p>
-                <h1 class="hero-title">
-                    Crafting <span class="text-blue">Cinematic</span> 3D Experiences
-                </h1>
-                <p class="hero-description">
-                    Showcase of 3D Projects. Focused on
-                    clean topology and PBR texturing, optimized for games, films, and real-time engines..
-                </p>
-                <menu class="hero-actions">
-                    <li>
-                        <a href="#projects" class="btn btn-primary">
-                            Explore Projects
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" class="icon-arrow">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                    </li>
-                </menu>
-                <dl class="hero-stats">
-                    <div class="stat-group">
-                        <dd class="stat-number">05+</dd>
-                        <dt class="stat-label">Core Projects</dt>
-                    </div>
-                    <div class="stat-group">
-                        <dd class="stat-number">03</dd>
-                        <dt class="stat-label">Industry Awards</dt>
-                    </div>
-                    <div class="stat-group">
-                        <dd class="stat-number">100%</dd>
-                        <dt class="stat-label">Production-Ready</dt>
-                    </div>
-                </dl>
-            </div>
-        </section>
-        <article id="about">
-            <img src="./img/Avatar_ver4.png" alt="Nguyen Ba Tuong" class="about-image" loading="lazy">
-            <hgroup class="about-header-group">
-                <p class="badge-about">ABOUT ME</p>
-                <h1 class="about-title">Passion Meets <span class="text-gradient">Precision</span></h1>
-            </hgroup>
-            <p class="about-description">
-                I am <strong>Nguyen Ba Tuong</strong> — a 3D Artist dedicated to creating high-quality, production-ready
-                assets.
-                With a deep focus on clean topology and PBR texturing, I transform concepts into optimized 3D models
-                that seamlessly integrate into games, films, and real-time environments.
+        <article class="hero-section" id="home">
+            <p class="hero-badge">3D Artist & Visual Storyteller</p>
+            <h1 class="hero-title">
+                Crafting <span class="text-blue">Cinematic</span> 3D Experiences
+            </h1>
+            <p class="hero-description">
+                Showcase of 3D Projects. Focused on
+                clean topology and PBR texturing, optimized for games, films, and real-time engines..
             </p>
-            <p class="about-description">
-                I love the art of digital craftsmanship, ensuring every polygon and material texture tells a story.
-                My goal is to deliver technical precision and visual excellence for every asset I build.
-            </p>
-            <ul class="features-list">
-
-                <li class="feature-item">
-                    <span class="feature-icon" aria-hidden="true">
-                        <i class="icon-star"></i>
-                    </span>
-                    <section class="feature-content">
-                        <h3>Vehicle & Hard Surface</h3>
-                        <p>High-fidelity 3D modeling with clean topology.</p>
-                    </section>
+            <ul class="hero-actions">
+                <li>
+                    <a href="#projects" class="btn btn-primary">
+                        Explore Projects
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" class="icon-arrow">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
                 </li>
-
-                <li class="feature-item">
-                    <span class="feature-icon" aria-hidden="true">
-                        <i class="icon-game"></i>
-                    </span>
-                    <section class="feature-content">
-                        <h3>Game & Character Art</h3>
-                        <p>Optimized assets ready for production pipelines.</p>
-                    </section>
+                <li>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
                 </li>
-
-                <li class="feature-item">
-                    <span class="feature-icon" aria-hidden="true">
-                        <i class="icon-check"></i>
-                    </span>
-                    <section class="feature-content">
-                        <h3>PBR Texturing & Baking</h3>
-                        <p>Realistic materials mapped to perfection.</p>
-                    </section>
-                </li>
-
             </ul>
+            <dl class="hero-stats">
+                <div class="stat-group">
+                    <dd class="stat-number">05+</dd>
+                    <dt class="stat-label">Core Projects</dt>
+                </div>
+                <div class="stat-group">
+                    <dd class="stat-number">03</dd>
+                    <dt class="stat-label">Industry Awards</dt>
+                </div>
+                <div class="stat-group">
+                    <dd class="stat-number">100%</dd>
+                    <dt class="stat-label">Production-Ready</dt>
+                </div>
+            </dl>
         </article>
-        <article class="skills-section" id="skills">
-            <hgroup class="skills-header">
-                <p class="badge-skills">TECHNICAL EXPERTISE</p>
-                <h1 class="skills-title">Skills & <span class="text-gradient">Tools</span></h1>
-            </hgroup>
-
-            <section class="hard-skills-container">
-                <h2>Hard Skills</h2>
-                <ul class="hard-skills-list">
-                    <li>Hard Surface Modeling (High/Low Poly).</li>
-                    <li>UV Mapping & Baking.</li>
-                    <li>PBR Texturing (Substance Painter).</li>
-                    <li>Game Asset Optimization.</li>
+        <article id="about">
+            <section class="about-section">
+                <div class="about-image-container">
+                    <img src="./img/Avatar_ver4.png" alt="Nguyen Ba Tuong" class="about-image" loading="lazy">
+                </div>
+                <div class="about-header-group">
+                    <p class="badge-about">ABOUT ME</p>
+                    <h1 class="about-title">Passion Meets <span class="text-gradient">Precision</span></h1>
+                </div>
+                <p class="about-description">
+                    I am <strong>Nguyen Ba Tuong</strong> — a 3D Artist dedicated to creating high-quality,
+                    production-ready assets.
+                    With a deep focus on clean topology and PBR texturing, I transform concepts into optimized 3D models
+                    that seamlessly integrate into games, films, and real-time environments.
+                </p>
+                <p class="about-description">
+                    I love the art of digital craftsmanship, ensuring every polygon and material texture tells a story.
+                    My goal is to deliver technical precision and visual excellence for every asset I build.
+                </p>
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <span class="feature-icon" aria-hidden="true"><i class="icon-star"></i></span>
+                        <div class="feature-content">
+                            <h3>Vehicle & Hard Surface</h3>
+                            <p>High-fidelity 3D modeling with clean topology.</p>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon" aria-hidden="true"><i class="icon-game"></i></span>
+                        <div class="feature-content">
+                            <h3>Game & Character Art</h3>
+                            <p>Optimized assets ready for production pipelines.</p>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon" aria-hidden="true"><i class="icon-check"></i></span>
+                        <div class="feature-content">
+                            <h3>PBR Texturing & Baking</h3>
+                            <p>Realistic materials mapped to perfection.</p>
+                        </div>
+                    </li>
                 </ul>
             </section>
 
-            <section class="software-container">
-                <h2>Software</h2>
-                <ul class="software-grid">
+            <section class="skills-section" id="skills">
+                <div class="skills-header">
+                    <p class="badge-skills">TECHNICAL EXPERTISE</p>
+                    <h1 class="skills-title">Skills & <span class="text-gradient">Tools</span></h1>
+                </div>
+                <section class="hard-skills-container">
+                    <h2>Hard Skills</h2>
+                    <ul class="hard-skills-list">
+                        <li>Hard Surface Modeling (High/Low Poly).</li>
+                        <li>UV Mapping & Baking.</li>
+                        <li>PBR Texturing (Substance Painter).</li>
+                        <li>Game Asset Optimization.</li>
+                    </ul>
+                </section>
+                <section class="software-container">
+                    <h2>Software</h2>
+                    <ul class="software-grid">
+                        <li class="software-card">
+                            <span class="software-icon" aria-hidden="true">
+                                <img src="./img/maya logo.png" alt="Maya Logo">
+                            </span>
+                            <div class="software-info">
+                                <h3>Autodesk Maya</h3>
+                                <p>Industry standard for 3D modeling & pipeline.</p>
+                            </div>
+                        </li>
 
-                    <li class="software-card">
-                        <span class="software-icon" aria-hidden="true">
-                            <img src="./img/maya logo.png" alt="Maya Logo">
-                        </span>
-                        <div class="software-info">
-                            <h3>Autodesk Maya</h3>
-                            <p>Industry standard for 3D modeling & pipeline.</p>
-                        </div>
-                    </li>
+                        <li class="software-card">
+                            <span class="software-icon" aria-hidden="true">
+                                <img src="./img/blender-icon.png" alt="Blender Logo">
+                            </span>
+                            <div class="software-info">
+                                <h3>Blender</h3>
+                                <p>3D creation suite for modeling and asset design.</p>
+                            </div>
+                        </li>
 
-                    <li class="software-card">
-                        <span class="software-icon" aria-hidden="true">
-                            <img src="./img/blender-icon.png" alt="Blender Logo">
-                        </span>
-                        <div class="software-info">
-                            <h3>Blender</h3>
-                            <p>3D creation suite for modeling and asset design.</p>
-                        </div>
-                    </li>
+                        <li class="software-card">
+                            <span class="software-icon" aria-hidden="true">
+                                <img src="./img/sp logo.png" alt="Substance Painter Logo">
+                            </span>
+                            <div class="software-info">
+                                <h3>Substance Painter</h3>
+                                <p>Advanced PBR texturing and material baking.</p>
+                            </div>
+                        </li>
 
-                    <li class="software-card">
-                        <span class="software-icon" aria-hidden="true">
-                            <img src="./img/sp logo.png" alt="Substance Painter Logo">
-                        </span>
-                        <div class="software-info">
-                            <h3>Substance Painter</h3>
-                            <p>Advanced PBR texturing and material baking.</p>
-                        </div>
-                    </li>
+                        <li class="software-card">
+                            <span class="software-icon" aria-hidden="true">
+                                <img src="./img/ps logo.png" alt="Photoshop Logo">
+                            </span>
+                            <div class="software-info">
+                                <h3>Adobe Photoshop</h3>
+                                <p>Texture editing, post-processing, and compositing.</p>
+                            </div>
+                        </li>
 
-                    <li class="software-card">
-                        <span class="software-icon" aria-hidden="true">
-                            <img src="./img/ps logo.png" alt="Photoshop Logo">
-                        </span>
-                        <div class="software-info">
-                            <h3>Adobe Photoshop</h3>
-                            <p>Texture editing, post-processing, and compositing.</p>
-                        </div>
-                    </li>
-
-                    <li class="software-card">
-                        <span class="software-icon" aria-hidden="true">
-                            <img src="./img/ZbrushIcon.png" alt="ZBrush Logo">
-                        </span>
-                        <div class="software-info">
-                            <h3>Pixologic ZBrush</h3>
-                            <p>High-poly digital sculpting and detailing.</p>
-                        </div>
-                    </li>
-
-                </ul>
+                        <li class="software-card">
+                            <span class="software-icon" aria-hidden="true">
+                                <img src="./img/ZbrushIcon.png" alt="ZBrush Logo">
+                            </span>
+                            <div class="software-info">
+                                <h3>Pixologic ZBrush</h3>
+                                <p>High-poly digital sculpting and detailing.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
             </section>
         </article>
         <article class="portfolio-section" id="projects">
-            <hgroup class="portfolio-header">
+            <div class="portfolio-header">
                 <span class="badge-portfolio">PORTFOLIO</span>
                 <h1 class="portfolio-title">Featured <span class="text-gradient">Projects</span></h1>
-            </hgroup>
+            </div>
 
-            <div class="projects-grid">
-
-                <div class="project-card">
-                    <div class="project-thumbnail">
-                        <img src="./img/Car in The Garage FN Comopsiting.jpg" alt="Personal Projects" loading="lazy">
-                    </div>
+            <ul class="projects-grid">
+                <li class="project-card">
+                    <span class="project-thumbnail">
+                        <img src="./img/Car in The Garage FN Comopsiting.jpg"
+                            alt="3D Hard Surface Car Modeling in The Garage" loading="lazy">
+                    </span>
                     <div class="project-content">
                         <h3>Personal Projects</h3>
                         <p>A collection of individual artwork focusing on high-fidelity hard surface modeling, precision
                             texture baking, and advanced PBR texturing workflows.</p>
                     </div>
-                </div>
+                </li>
 
-                <div class="project-card">
-                    <div class="project-thumbnail">
-                        <img src="./img/The Paper Plane by Vertex4-Cover.jpg" alt="Team Projects" loading="lazy">
-                    </div>
+                <li class="project-card">
+                    <span class="project-thumbnail">
+                        <img src="./img/The Paper Plane by Vertex4-Cover.jpg"
+                            alt="The Paper Plane Short Film Project by Vertex4" loading="lazy">
+                    </span>
                     <div class="project-content">
                         <h3>Team & Production Projects</h3>
                         <p>Collaborative 3D assets and animation pipelines developed within professional and academic
                             team environments, optimized for real-time engines.</p>
                     </div>
-                </div>
+                </li>
 
-                <div class="project-card">
-                    <div class="project-thumbnail">
-                        <img src="./img/100HRS_ArenaCantho01_HexaSync.jpg" alt="Competition Projects" loading="lazy">
-                    </div>
+                <li class="project-card">
+                    <span class="project-thumbnail">
+                        <img src="./img/100HRS_ArenaCantho01_HexaSync.jpg"
+                            alt="100HRS Creative Marathon Project by HexaSync Team" loading="lazy">
+                    </span>
                     <div class="project-content">
                         <h3>Competition Projects</h3>
                         <p>Award-winning concepts and rapid 3D asset creation executed under intense time constraints
                             during creative marathons and industry challenges.</p>
                     </div>
-                </div>
-
-            </div>
+                </li>
+            </ul>
         </article>
         <section class="awards-section" id="awards">
-            <hgroup class="awards-header">
+            <div class="awards-header">
                 <p class="badge-awards">RECOGNITION</p>
                 <h1 class="awards-title">Awards & <span class="text-gradient">Achievements</span></h1>
-            </hgroup>
+            </div>
 
             <ul class="awards-grid">
 
@@ -289,15 +279,15 @@
                             <li>Silver – Performance Excellent Awards</li>
                         </ul>
                     </div>
-                </li>s
+                </li>
 
             </ul>
         </section>
         <article class="contact-section" id="contact">
-            <hgroup class="contact-header">
+            <div class="contact-header">
                 <span class="badge-contact">GET IN TOUCH</span>
                 <h1 class="contact-title">Let's Create <span class="text-gradient">Together</span></h1>
-            </hgroup>
+            </div>
 
             <div class="contact-container">
                 <address class="contact-info">
@@ -362,7 +352,7 @@
             </div>
         </article>
     </main>
-    <hr>
+    <!-- Thẻ footer được dùng để nhóm các nội dung chân trang, thường chứa thông tin liên hệ, bản quyền và liên kết quan trọng -->
     <footer class="main-footer">
         <div class="footer-container">
 
@@ -389,6 +379,13 @@
             <small class="copyright">Copyright &copy 2025 Nguyen Ba Tuong. Crafted with passion and precision.</small>
         </div>
     </footer>
+    <button id="backToTop" class="btn-back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" class="arrow-icon">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
