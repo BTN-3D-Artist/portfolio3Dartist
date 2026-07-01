@@ -11,7 +11,7 @@
     --bg-card-hover: #1a1a1e;    /* Màu nền Card khi di chuột vào */
     --color-primary: #3b82f6;    /* Màu xanh chủ đạo (Accent Blue) */
     --color-text: #f4f4f5;       /* Màu chữ chính (Trắng sáng) */
-    --color-text-muted: #a1a1aa; /* Màu chữ phụ/mô tả (Xám giảm tương phản) */
+    --color-text-muted: #808080; /* Màu chữ phụ/mô tả (Xám giảm tương phản) */
     --max-width: 1200px;         /* Chiều rộng tối đa của nội dung trang web */
     --transition: all 0.3s ease; /* Hiệu ứng chuyển cảnh mượt mà chung */
 }
@@ -107,13 +107,14 @@ section, article {
    3. THANH ĐIỀU HƯỚNG (HEADER & NAVIGATION)
    ========================================================================== */
 header {
-    position: fixed;             /* Cố định menu nằm trên đỉnh màn hình khi cuộn */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 70px;
-    background: rgba(10, 10, 12, 0.8);
-    backdrop-filter: blur(10px); /* Hiệu ứng kính mờ (Glassmorphism) thời thượng */
+    background: rgba(10, 10, 12, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -122,63 +123,53 @@ header {
     border-bottom: 1px solid #1c1c1f;
 }
 
-/* --- Định dạng Logo để tránh bị nén/méo hình --- */
-.logo img {
-    height: 45px;            /* Khóa chiều cao cố định để cân bằng với thanh header (70px) */
-    width: auto;             /* TỰ ĐỘNG co giãn chiều rộng theo đúng tỷ lệ gốc của ảnh */
-    object-fit: contain;     /* Đảm bảo toàn bộ logo nằm trọn trong khung, không mất góc */
-    display: block;
-    filter: drop-shadow(0px 2px 8px rgba(0, 170, 255, 0.2)); /* Tạo hiệu ứng hào quang xanh nhẹ cho logo 3D */
-    transition: transform 0.3s ease;
-}
+/* Sắp xếp thứ tự chuẩn trên MÁY TÍNH (Desktop) */
+.logo         { order: 1; }
+.nav-bar      { order: 2; }
+.btn-download { order: 3; }
 
-.logo img:hover {
-    transform: scale(1.05);  /* Hiệu ứng phóng to nhẹ cực mượt khi rê chuột vào */
-}
-
-/* Mặc định trên Máy tính: Ẩn các nút bấm đóng/mở menu mobile */
-.menu-toggle, .menu-close, .mobile-only {
+/* Mặc định ẩn các nút bấm đóng/mở của mobile khi ở trên máy tính */
+.menu-toggle, .menu-close {
     display: none;
 }
 
-.nav-list {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-}
-
-.nav-link {
-    color: var(--color-text-muted);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: var(--transition);
-}
-
-.nav-link:hover, .nav-link.active {
-    color: var(--color-primary);
-}
-
+/* Kiểu dáng nút Download CV */
 .btn-download {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     background: #1c1c1f;
-    color: var(--color-text);
+    color: #ffffff;
     padding: 8px 16px;
     border-radius: 6px;
     text-decoration: none;
     font-size: 0.88rem;
     font-weight: 600;
     border: 1px solid #27272a;
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
-
 .btn-download:hover {
-    background: var(--color-primary);
-    border-color: var(--color-primary);
+    background: #3b82f6;
+    border-color: #3b82f6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
 }
 
+/* Định dạng Menu chữ trên Máy tính */
+.nav-list {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+.nav-link {
+    color: #808080;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+.nav-link:hover, .nav-link.active {
+    color: #3b82f6;
+}
 /* ==========================================================================
    4. PHẦN GIỚI THIỆU ĐẦU TRANG (HERO SECTION)
    ========================================================================== */
@@ -736,6 +727,17 @@ header {
         display: none;
     }
 
+    /* ĐỔI THỨ TỰ HIỂN THỊ TRÊN DI ĐỘNG BẰNG CSS ORDER */
+    .logo         { order: 1; }
+    .btn-download { order: 2; } /* Đưa nút Download ra giữa */
+    .menu-toggle  { order: 3; } /* Đưa nút mở menu sang bên phải */
+
+    /* Thu nhỏ chữ Download CV một chút trên điện thoại cho gọn */
+    .btn-download {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
     /* 2. HIỆN NÚT ICON LIST (HAMBURGER) */
     .menu-toggle {
         display: block;
@@ -764,15 +766,15 @@ header {
 
     /* Khi có JavaScript thêm class .active vào thì trượt ra */
     .nav-bar.active {
-        right: 0; 
+        right: 0 !important; 
     }
 
     /* 4. HIỆN NÚT DẤU X ĐỂ ĐÓNG MENU MOBILE */
     .menu-close {
         display: block;
         position: absolute;
-        top: 30px;
-        right: 30px;
+        top: 25px;
+        right: 25px;
         background: none;
         border: none;
         color: var(--color-text-muted);
@@ -783,11 +785,11 @@ header {
     .nav-list {
         flex-direction: column;
         align-items: center;
-        gap: 40px;
+        gap: 35px;
     }
 
     .nav-link {
-        font-size: 1.8rem; /* Chữ to để ngón tay dễ bấm chạm */
+        font-size: 1.6rem; /* Chữ to để ngón tay dễ bấm chạm */
         font-weight: 700;
         color: #fff;
     }
@@ -813,7 +815,7 @@ header {
         top: 0;
         left: 0;
         width: 100%;
-        height: 70px;            /* Khóa cứng chiều cao chuẩn */
+        height: 65px;            /* Khóa cứng chiều cao chuẩn */
         display: flex;
         flex-direction: row;     /* Logo một bên, Nút menu một bên song song */
         justify-content: space-between;

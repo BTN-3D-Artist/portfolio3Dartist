@@ -19,27 +19,32 @@ backToTopButton.addEventListener("click", () => {
     });
 });
 
-// JavaScript code for responsive navigation menu functionality
+// --- XỬ LÝ ĐÓNG MỞ MENU MOBILE ---
 const navBar = document.getElementById("navBar");
 const menuOpen = document.getElementById("menuOpen");
 const menuClose = document.getElementById("menuClose");
 const navLinks = document.querySelectorAll(".nav-link");
 
-// Mở menu
-menuOpen.addEventListener("click", () => {
-    navBar.classList.add("active");
-    document.body.classList.add("menu-open");
-});
+// 1. Khi Click vào nút 3 gạch -> Mở menu trượt ra
+if (menuOpen) {
+    menuOpen.addEventListener("click", () => {
+        navBar.classList.add("active");
+        document.body.classList.add("menu-open"); // Khóa cuộn trang nền
+    });
+}
 
-// Đóng menu
+// Hàm dùng chung để đóng menu
 const closeMenu = () => {
     navBar.classList.remove("active");
-    document.body.classList.remove("menu-open");
+    document.body.classList.remove("menu-open"); // Mở lại cuộn trang
 };
 
-menuClose.addEventListener("click", closeMenu);
+// 2. Khi Click vào nút dấu X -> Đóng menu
+if (menuClose) {
+    menuClose.addEventListener("click", closeMenu);
+}
 
-// Đóng menu khi bấm vào một link (để trang cuộn xuống section đó)
+// 3. Khi bấm vào các mục điều hướng (Home, About...) -> Tự động đóng menu và cuộn xuống
 navLinks.forEach(link => {
     link.addEventListener("click", closeMenu);
 });
