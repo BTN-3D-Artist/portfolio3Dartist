@@ -51,8 +51,9 @@ section, article {
 
 .text-gradient {
     background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text; /* Tạo hiệu ứng gradient cho chữ */
+    -webkit-background-clip: text; /* Tạo hiệu ứng gradient cho chữ */
+    -webkit-text-fill-color: transparent; /* Ẩn màu chữ gốc để chỉ hiển thị gradient */
 }
 
 /* Định dạng các thẻ Badge (Nhãn phụ nằm trên tiêu đề) */
@@ -119,6 +120,25 @@ header {
     padding: 0 40px;
     z-index: 1000;
     border-bottom: 1px solid #1c1c1f;
+}
+
+/* --- Định dạng Logo để tránh bị nén/méo hình --- */
+.logo img {
+    height: 45px;            /* Khóa chiều cao cố định để cân bằng với thanh header (70px) */
+    width: auto;             /* TỰ ĐỘNG co giãn chiều rộng theo đúng tỷ lệ gốc của ảnh */
+    object-fit: contain;     /* Đảm bảo toàn bộ logo nằm trọn trong khung, không mất góc */
+    display: block;
+    filter: drop-shadow(0px 2px 8px rgba(0, 170, 255, 0.2)); /* Tạo hiệu ứng hào quang xanh nhẹ cho logo 3D */
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);  /* Hiệu ứng phóng to nhẹ cực mượt khi rê chuột vào */
+}
+
+/* Mặc định trên Máy tính: Ẩn các nút bấm đóng/mở menu mobile */
+.menu-toggle, .menu-close, .mobile-only {
+    display: none;
 }
 
 .nav-list {
@@ -739,12 +759,94 @@ header {
 
 /* --- MOBILE VIEW (Màn hình nhỏ hơn 768px) --- */
 @media (max-width: 768px) {
+/* 1. ẨN NÚT DOWNLOAD TRÊN DESKTOP */
+    .desktop-only {
+        display: none;
+    }
+
+    /* 2. HIỆN NÚT ICON LIST (HAMBURGER) */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--color-text);
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    /* 3. BIẾN NAV-BAR THÀNH BẢN XỔ TOÀN MÀN HÌNH */
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Giấu menu sang bên phải màn hình */
+        width: 100%;
+        height: 100vh;
+        background: #0d0d0f; /* Nền tối sang trọng giống Cỏ Dại */
+        z-index: 2000;       /* Nổi lên trên cùng đè cả nút back-to-top */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1); /* Hiệu ứng trượt mượt */
+    }
+
+    /* Khi có JavaScript thêm class .active vào thì trượt ra */
+    .nav-bar.active {
+        right: 0; 
+    }
+
+    /* 4. HIỆN NÚT DẤU X ĐỂ ĐÓNG MENU MOBILE */
+    .menu-close {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        background: none;
+        border: none;
+        color: var(--color-text-muted);
+        cursor: pointer;
+    }
+
+    /* 5. DÀN CÁC MỤC MENU THEO HÀNG DỌC CHỮ TO */
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .nav-link {
+        font-size: 1.8rem; /* Chữ to để ngón tay dễ bấm chạm */
+        font-weight: 700;
+        color: #fff;
+    }
+
+    /* 6. HIỆN CHỮ DOWNLOAD CV RIÊNG TRÊN MOBILE */
+    .mobile-only {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .mobile-only .nav-link {
+        color: var(--color-primary);
+        font-size: 1.2rem;
+    }
+    
+    /* Khóa cuộn trang khi đang xem menu */
+    body.menu-open {
+        overflow: hidden; 
+    }
+
     header {
-        flex-direction: column;  /* Xếp chồng Logo, Nav và Nút download lên nhau */
-        height: auto;
-        padding: 15px;
-        gap: 10px;
-        position: relative;      /* Bỏ fixed trên mobile để không chiếm diện tích màn hình nhỏ */
+        position: fixed;         /* Cố định header dính trên đỉnh màn hình */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;            /* Khóa cứng chiều cao chuẩn */
+        display: flex;
+        flex-direction: row;     /* Logo một bên, Nút menu một bên song song */
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
     }
     
     .hero-section { padding-top: 40px; }
@@ -774,4 +876,6 @@ header {
     .footer-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
     
     .btn-back-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+
+    
 }
